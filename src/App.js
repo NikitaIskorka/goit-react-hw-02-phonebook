@@ -5,20 +5,26 @@ import Section from './section/'
 import ContactForm from './contactForm/'
 import Contacts from './contacts'
 
+const contacts = [['Glen'], ['Tony'], ['Mike']]
 
 class App extends Component {
   state = {
-    contacts: [],
-    name: ''
+    contacts: []
   }
+
+  onFormSubmit = (data) => {
+    console.log(data);
+
+  }
+
   render() {
     return (<>
 
       <Section title='Phonebook'>
-        <ContactForm />
+        <ContactForm onSubmit={this.onFormSubmit} />
       </Section>
       <Section title='Contacts' />
-      <Contacts />
+      <Contacts contacts={contacts} />
       <Section />
 
     </>

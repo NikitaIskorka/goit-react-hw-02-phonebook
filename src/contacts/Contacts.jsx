@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
 
-class Contacts extends Component {
-    render() {
-        return (<div>
 
-        </div>)
-    }
+const Contacts = ({ contacts }) => {
+    return (<ul>
+        {contacts.map(contact => {
+            return (
+                <li id={contact}>{contact}</li>
+            )
+        })}
+    </ul>)
 }
 export default Contacts

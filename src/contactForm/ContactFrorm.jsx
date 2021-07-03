@@ -6,6 +6,14 @@ class ContactForm extends Component {
     }
 
 
+    onFormSubmit = (e) => {
+        e.preventDefault()
+        const data = 'Hello'
+        return data
+    }
+
+
+
     handleInputChange = (e) => {
         console.log(e.currentTarget.value);
         this.setState({
@@ -14,7 +22,7 @@ class ContactForm extends Component {
     }
 
     render() {
-        return (<><form>
+        return (<><form onSubmit={this.onFormSubmit}>
             <label htmlFor="">Name
                 <input
                     onChange={this.handleInputChange}
